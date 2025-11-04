@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { List, Card } from 'antd';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { books } from '../data/books';
 
 const HomePage: React.FC = () => {
-  const [books, setBooks] = useState<any[]>([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/books').then(res => setBooks(res.data));
-  }, []);
 
   return (
     <div style={{ padding: '20px' }}>

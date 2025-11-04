@@ -1,27 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { Select, Space } from "antd";
 import ReaderScroll from "../components/Reader/ReaderScroll";
 import ReaderPaged from "../components/Reader/ReaderPaged";
 import Reader3D from "../components/Reader/Reader3D-1";
 import { useReaderStore } from "../components/Reader/useReaderStore";
 import { ThemeSwitcher } from "../components/Reader/ThemeSwitcher";
+import { getChaptersByBookId } from "../data/chapters";
 
 const { Option } = Select;
 
 export default function ReaderPage() {
   const { bookId } = useParams();
-  const [chapters, setChapters] = useState<any[]>([]);
   const mode = useReaderStore((s) => s.mode);
   const setMode = useReaderStore((s) => s.setMode);
   const theme = useReaderStore((s) => s.theme);
 
-  useEffect(() => {
-    // load chapters for bookId
-    axios.get(`http://localhost:3001/chapters?bookId=${bookId}`).then((res) => {
-      setChapters(res.data || []);
-    });
+  const chapters = useMemo(() => {
+    return getChaptersByBookId(Number(bookId));
   }, [bookId]);
 
   // apply theme to root

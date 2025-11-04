@@ -1,0 +1,72 @@
+.reader3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f5f2e9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  perspective: 1500px;
+}
+
+.book-scene {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.book-page {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background: #fffdf9;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 16px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+
+.book-content {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  overflow: hidden;
+}
+
+.reader-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 20px;
+  background: #faf7f0;
+  border-top: 1px solid #e5dcc6;
+}
+
+.reader-controls .btn {
+  padding: 6px 16px;
+  font-size: 14px;
+  border: none;
+  background: #d9c8a9;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reader-controls .btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-index {
+  font-size: 14px;
+  color: #555;
+}

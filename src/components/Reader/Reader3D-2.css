@@ -1,0 +1,99 @@
+.reader3d-container {
+  width: 100%;
+  height: 100%;
+  background: #f5f2e9;
+  overflow: hidden;
+  position: relative;
+  perspective: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  perspective: inherit;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fffef8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  transform-origin: left center;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.page.front {
+  z-index: 2;
+}
+
+.page.back {
+  z-index: 1;
+}
+
+.page-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page.dragging {
+  cursor: grabbing;
+}
+
+.page-shadow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(0, 0, 0, 0.01) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.page.front.dragging .page-shadow {
+  opacity: 1;
+}
+
+.reader-controls {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reader-controls button {
+  padding: 6px 12px;
+  border: none;
+  background: #c9a86a;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reader-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reader-controls span {
+  font-size: 16px;
+  color: #555;
+}

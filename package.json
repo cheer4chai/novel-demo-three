@@ -1,0 +1,26 @@
+{
+  "name": "antd-novel-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "mock": "json-server --watch mock/db.json --port 3001"
+  },
+  "dependencies": {
+    "antd": "^5.18.0",
+    "axios": "^1.7.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^7.9.5",
+    "zustand": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "json-server": "^0.17.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.4.4"
+  }
+}

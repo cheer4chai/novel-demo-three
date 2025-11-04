@@ -1,0 +1,58 @@
+:root {
+  --reader-bg: #fdf6e3;
+  --reader-text: #222;
+}
+
+[data-theme='light'] {
+  --reader-bg: #ffffff;
+  --reader-text: #111;
+}
+
+[data-theme='dark'] {
+  --reader-bg: #0f1113;
+  --reader-text: #e6eef6;
+}
+
+[data-theme='paper'] {
+  --reader-bg: #fbf6e6;
+  --reader-text: #222;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Microsoft YaHei", Arial, sans-serif;
+  background: var(--reader-bg);
+  color: var(--reader-text);
+}
+
+.app {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 12px;
+}
+
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+/* common reader styles */
+.reader-shell {
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  padding: 18px;
+  min-height: 70vh;
+  height: 70vh;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* small utilities */
+.btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.reader-container {
+  position: relative;
+  overflow: hidden;
+  padding: 1em;
+  background-color: #fff;
+  color: #000;
+  transition: background 0.3s, color 0.3s;
+}
+
+.reader-paragraph {
+  margin-bottom: 1em;
+}
+
+.reader-controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.theme-default {
+  background-color: #fff;
+  color: #000;
+}
+.theme-paper {
+  background-color: #fdf6e3;
+  color: #333;
+}
+.theme-night {
+  background-color: #1c1c1c;
+  color: #ccc;
+}
+
+/* 可加 3D 翻页效果，稍后在 E 模式里加 transform-style: preserve-3d */
